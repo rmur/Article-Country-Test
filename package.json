@@ -1,0 +1,23 @@
+{
+    "name": "overlooptechtest",
+    "description": "Overloop techtest",
+    "version": "1.0.0",
+    "private": false,
+    "author": "Remco van Stiphout",
+    "engines": {
+        "node": "0.10.x",
+        "npm": "1.2.x"
+    },
+    "dependencies": {
+        "express": "3.4.7",
+        "pug": "latest",
+        "mongoose": "4.10.8",
+        "connect-mongo": "latest",
+        "connect-flash": "latest",
+        "underscore": "latest",
+        "async": "latest",
+        "view-helpers": "latest",
+        "mean-logger": "latest",
+        "forever": "latest"
+    }
+}

@@ -1,0 +1,13 @@
+<section data-ng-controller="ArticlesController" data-ng-init="findOne()">
+	<span>{{article.created | date:'medium'}}</span> /
+	<h2>{{article.title}} 
+		<a href="/#!/articles/{{article._id}}/edit">
+			<button type="button" class="btn btn-primary">edit</button>
+		</a>
+		<a href="/#!/articles/">
+			<button type="button" class="btn btn-primary" ng-click="remove(article)">delete</button>
+		</a>
+	</h2>
+	<div>{{article.content}}</div>
+	<div>Countries article available in :{{article.savedCountries}}</div>
+</section>

@@ -1,0 +1,6 @@
+{
+    "db": "mongodb://localhost/overloop-techtest",
+    "app": {
+        "name": "Overloop Tech test"
+    }
+}

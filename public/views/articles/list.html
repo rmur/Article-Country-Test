@@ -1,0 +1,32 @@
+<section data-ng-controller="ArticlesController" data-ng-init="find()">
+
+
+	<div class="search-bar">
+		<h4>Filter Articles by Country:</h4>
+		<label>
+			
+			<div data-ng-repeat="countryFilter in countryFilters">
+			<input type="text" ng-model="countryFilter.searchText" searchText="" placeholder="Filter by country..">
+			</div>
+
+			<button type="submit" ng-click="addNewFilter()">Add filter</button>
+
+		</label>
+	</div>
+
+	
+
+	<a href="/#!/articles/create"><button type="button" class="btn btn-primary">Create a new article</button></a>
+    <br>
+    <br>
+	<br>
+	
+	<ul class="articles unstyled">
+			
+		<li data-ng-repeat="article in articles | filter:searchFilter">
+			<span>{{article.created | date:'medium'}}</span> /
+			<h4><a data-ng-href="#!/articles/{{article._id}}">{{article.title}}</a></h4>
+			<div>{{article.content}}</div>
+		</li>
+	</ul>
+</section>
