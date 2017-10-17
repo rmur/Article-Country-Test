@@ -30,7 +30,31 @@ function ($scope, $routeParams, $location, Global, Articles, $http) {
         var article = $scope.article;
         article.savedCountries.length = 0;
     }
+//Filtering
 
+// $scope.inputValue1 = '';
+// $scope.inputValue2 = '';
+// $scope.foundArray=  [];
+
+// $scope.onChangeInput =  function() {
+//     $scope.foundArray = [];
+//     var articles = $scope.articles;
+//     var inputValue1 = $scope.inputValue1;
+//     var inputValue2 = $scope.inputValue2;
+//     var foundArray = $scope.foundArray;
+    
+//     //based in input compare it to countries in articles
+//     for( var article of articles){
+//         for(country of article.savedCountries){
+//             if(inputValue1 == country || inputValue2 == country){
+//                 if(!foundArray.includes(article)){
+//                 foundArray.push(article);}
+//             } else if(inputValue1 === "" || inputValue2 === ""){
+//                 foundArray.length = 0
+//             }
+//         }
+//     }
+// }
 
     $scope.create = function() {
         var article = new Articles({

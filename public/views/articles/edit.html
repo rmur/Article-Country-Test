@@ -13,7 +13,7 @@
 				<label class="control-label" for="countries">Countries</label>
 				<div class="controls">
 					<a ng-click="updateCountriesInArticle()" ng-model="country" class="btn btn-info">Add country</a>
-					<Select >
+					<Select ng-model="country">
 						<option ng-repeat="country in countries">{{country}}</option>
 					</Select>
 				</div>

@@ -11,7 +11,7 @@
 			<label class="control-label" for="countries">Countries</label>
 			<div class="controls">
 				<a ng-click="saveCountry()" ng-model="country" class="btn btn-info">Add country</a>
-				<Select>
+				<Select ng-model="country">
 					<option ng-repeat="country in countries">{{country}}</option>
 				</Select>
 			</div>
@@ -23,6 +23,7 @@
 				<ul>
 					<li ng-repeat="country in savedCountries">{{country}}</li>
 				</ul>
+				<a class="btn" ng-click="clearCountries()">Clear</a>
 			</div>
 		</div>
 
