@@ -7,21 +7,18 @@ function ($scope, $routeParams, $location, Global, Articles, $http) {
     $scope.countries = [];
     $scope.savedCountries = [];
 
-    $scope.searchFilter = function(article){
-        var re = new RegExp($scope.searchText, 'i');
-        return !$scope.searchText || re.test(article.savedCountries)
-    }
+    
 
-     $scope.countryFilters = [{id: 'filter1'}];
+    //  $scope.countryFilters = [{id: 'filter1', 'ng-model': "searchText"}];
 
-    $scope.addNewFilter = function(){
-        var newFilterNo = $scope.countryFilters.length + 1;
-        $scope.countryFilters.push({'id':'filter' + newFilterNo});
-    }
+    // $scope.addNewFilter = function(){
+    //     var newFilterNo = $scope.countryFilters.length + 1;
+    //     $scope.countryFilters.push({'id':'filter' + newFilterNo});
+    // }
 
     $http.get('https://restcountries.eu/rest/v2/all')
     .then(function(res) {
-        for(let country of res.data) {
+        for(var country of res.data) {
             $scope.countries.push(country.name);
         }
         $scope.country = $scope.countries[0];
@@ -29,6 +26,23 @@ function ($scope, $routeParams, $location, Global, Articles, $http) {
     
     $scope.saveCountry = function() {
         $scope.savedCountries.push($scope.country);
+    }
+
+    $scope.addToSavedCountries = function(){
+        var article = $scope.article;
+        var country = $scope.country
+        article.savedCountries.push(country);
+    }
+
+    $scope.clearCountries = function(){
+        var article = $scope.article;
+        article.savedCountries.length = 0;
+    }
+
+
+    $scope.searchFilter = function(article){
+        var re = new RegExp($scope.searchText, 'i');
+        return !$scope.searchText || re.test(article.savedCountries)
     }
 
     $scope.create = function() {
@@ -57,11 +71,19 @@ function ($scope, $routeParams, $location, Global, Articles, $http) {
 
     $scope.update = function() {
         var article = $scope.article;
+        var savedCountries = $scope.savedCountries
         if (!article.updated) {
             article.updated = [];
         }
         article.updated.push(new Date().getTime());
 
+        // for (var countries in savedCountries){
+        //     for(var country in countries){
+        //         debugger
+        //         article.savedCountries.push(country);
+        //     }   
+        // }
+        // article.savedCountries.push($scope.savedCountries)
         article.$update(function() {
             $location.path('articles/' + article._id);
         });

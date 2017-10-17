@@ -8,6 +8,27 @@
 				</input>
 			</div>
 		</div>
+		
+		<div class="control-group">
+				<label class="control-label" for="countries">Countries</label>
+				<div class="controls">
+					<Select ng-change="addToSavedCountries()" ng-model="country">
+						<option ng-repeat="country in countries">{{country}}</option>
+					</Select>
+				</div>
+			</div>
+
+			<div class="control-group">
+			<label class="control-label" for="saved countries">Saved Countries</label>
+			<div class="controls">
+					
+				<ul>
+					<li ng-repeat="country in article.savedCountries">{{country}}</li>
+				</ul>
+				<a class="btn" ng-click="clearCountries()">Clear</a>
+			</div>
+		</div>
+
 		<div class="control-group">
 			<label class="control-label" for="content">Content</label>
 			<div class="controls">
@@ -18,6 +39,7 @@
 		<div class="control-group">
 			<div class="controls">
 				<input type="submit" class="btn">
+				<a href="/#!/articles/" class="btn">Cancel</a>
 			</div>
 		</div>
 	</form>

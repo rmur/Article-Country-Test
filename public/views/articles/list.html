@@ -4,13 +4,9 @@
 	<div class="search-bar">
 		<h4>Filter Articles by Country:</h4>
 		<label>
-			
-			<div data-ng-repeat="countryFilter in countryFilters">
-			<input type="text" ng-model="countryFilter.searchText" searchText="" placeholder="Filter by country..">
-			</div>
-
-			<button type="submit" ng-click="addNewFilter()">Add filter</button>
-
+			<input type="text" ng-model="searchText" placeholder="Filter by country..">
+			<input type="text" ng-model="searchText1" placeholder="Filter by country..">
+			<input type="text" ng-model="searchText2" placeholder="Filter by country..">
 		</label>
 	</div>
 
@@ -21,9 +17,8 @@
     <br>
 	<br>
 	
-	<ul class="articles unstyled">
-			
-		<li data-ng-repeat="article in articles | filter:searchFilter">
+	<ul class="articles unstyled">	
+		<li data-ng-repeat="article in articles | filter:searchText | filter:searchText1 | filter:searchText2">
 			<span>{{article.created | date:'medium'}}</span> /
 			<h4><a data-ng-href="#!/articles/{{article._id}}">{{article.title}}</a></h4>
 			<div>{{article.content}}</div>

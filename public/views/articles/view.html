@@ -9,5 +9,12 @@
 		</a>
 	</h2>
 	<div>{{article.content}}</div>
-	<div>Countries article available in :{{article.savedCountries}}</div>
+	<div >
+		<h4>Countries article available in :</h4>
+		<ul ng-repeat="country in article.savedCountries">
+			<li>
+				{{country}}
+			</li>
+		</ul>
+	</div>
 </section>
