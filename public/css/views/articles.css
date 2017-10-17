@@ -1,3 +1,40 @@
+/* List */
+form.form-horizontal{
+    border: solid;
+    border-color: grey;
+    padding: 1em;
+    background-color: lightblue;
+}
+
+#btn-create-article{
+    margin: 0.5em;
+}
+
+
+#search-bar{
+    background-color: grey;
+    padding: 1em;
+    margin: 1em;
+}
+
+
+#article-listing{
+    margin: 0.5em;
+}
+
+#article-listing li{
+    background-color: rgba(209, 213, 209, 0.886);
+    padding: 0.5em;
+    margin: 0.5em;
+}
+
+/* View */
+#article-countries{
+    background-color: lightgray;
+    padding: 0.5em;
+    font-size: 16px;
+    font-style: italic;
+}
 h1 {
     text-align:center
 }

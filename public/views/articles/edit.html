@@ -1,4 +1,4 @@
-<section data-ng-controller="ArticlesController" data-ng-init="findOne()">
+<section  data-ng-controller="ArticlesController" data-ng-init="findOne()">
 	<form class="form-horizontal" data-ng-submit="update()">
 		<div class="control-group">
 			<label class="control-label" for="title">Title</label>
@@ -12,7 +12,8 @@
 		<div class="control-group">
 				<label class="control-label" for="countries">Countries</label>
 				<div class="controls">
-					<Select ng-change="addToSavedCountries()" ng-model="country">
+					<a ng-click="updateCountriesInArticle()" ng-model="country" class="btn btn-info">Add country</a>
+					<Select >
 						<option ng-repeat="country in countries">{{country}}</option>
 					</Select>
 				</div>
@@ -39,7 +40,7 @@
 		<div class="control-group">
 			<div class="controls">
 				<input type="submit" class="btn">
-				<a href="/#!/articles/" class="btn">Cancel</a>
+				<a href="/#!/articles/" class="btn btn-info">Cancel</a>
 			</div>
 		</div>
 	</form>

@@ -1,23 +1,18 @@
 <section data-ng-controller="ArticlesController" data-ng-init="find()">
 
+	<a id="btn-create-article" href="/#!/articles/create"><button id="btn-create-article" type="button" class="btn btn-success">Create a new article</button></a>
 
-	<div class="search-bar">
+	<div id="search-bar">
 		<h4>Filter Articles by Country:</h4>
 		<label>
-			<input type="text" ng-model="searchText" placeholder="Filter by country..">
-			<input type="text" ng-model="searchText1" placeholder="Filter by country..">
-			<input type="text" ng-model="searchText2" placeholder="Filter by country..">
+			<input type="text" ng-model="searchText" placeholder="Enter Country 1">
+			<input type="text" ng-model="searchText1" placeholder="Enter Country 2 ">
+			<input type="text" ng-model="searchText2" placeholder="Enter Country 3">
 		</label>
 	</div>
 
-	
 
-	<a href="/#!/articles/create"><button type="button" class="btn btn-primary">Create a new article</button></a>
-    <br>
-    <br>
-	<br>
-	
-	<ul class="articles unstyled">	
+	<ul id="article-listing" class="articles unstyled">	
 		<li data-ng-repeat="article in articles | filter:searchText | filter:searchText1 | filter:searchText2">
 			<span>{{article.created | date:'medium'}}</span> /
 			<h4><a data-ng-href="#!/articles/{{article._id}}">{{article.title}}</a></h4>

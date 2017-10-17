@@ -5,11 +5,11 @@
 			<button type="button" class="btn btn-primary">edit</button>
 		</a>
 		<a href="/#!/articles/">
-			<button type="button" class="btn btn-primary" ng-click="remove(article)">delete</button>
+			<button type="button" class="btn btn-danger" ng-click="remove(article)">delete</button>
 		</a>
 	</h2>
 	<div>{{article.content}}</div>
-	<div >
+	<div id="article-countries" >
 		<h4>Countries article available in :</h4>
 		<ul ng-repeat="country in article.savedCountries">
 			<li>
